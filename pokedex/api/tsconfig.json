@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+      "target": "ESNext",
+      "module": "CommonJS",
+      "moduleResolution": "node",
+      "composite": true,
+      "emitDeclarationOnly": true,
+      "esModuleInterop": true,
+  },
+  "exclude": [
+      "node_modules"
+  ],
+  "include": [
+      "**/*.ts"
+, "data/features/schemas/acidBreath.ts"    ]
+}
