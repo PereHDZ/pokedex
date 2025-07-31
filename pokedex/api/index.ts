@@ -11,7 +11,6 @@ console.log(MONGODB_URL)
 
 mongoose.connect(MONGODB_URL)
     .then(() => {
-        console.log("Connected to MongoDB successfully!");
         const api = express()
 
         const jsonbodyparser = express.json()
