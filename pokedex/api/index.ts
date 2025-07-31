@@ -3,6 +3,8 @@ import mongoose from 'mongoose'
 import express from 'express'
 import cors from 'cors'
 
+import logic from './logic'
+
 dotenv.config()
 
 const { MONGODB_URL, PORT } = process.env
@@ -17,6 +19,17 @@ mongoose.connect(MONGODB_URL)
 
         api.use(cors())
         api.use(express.json())
+
+        api.get('/pokemon/allIds', async (req, res) => {
+            console.log('GET /pokemon/allIds called')
+            try {
+                const allBaseIds = await logic.retrieveAllBaseIds()
+                res.json(allBaseIds)
+            } catch (error: any) {
+                console.error('Error ocurred:', error.message)
+                res.status(500).json({ error: error.message })
+            }
+        })
 
         api.listen(PORT, () => {
             console.log(`API listening on port ${PORT}`)
