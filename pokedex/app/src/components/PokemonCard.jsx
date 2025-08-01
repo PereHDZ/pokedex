@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import logic from '../logic'
+import TypingDiv from './TypingDiv'
 
 function PokemonCard({ id, color }){
     const [pokemon, setPokemon] = useState(null)
@@ -11,14 +12,16 @@ function PokemonCard({ id, color }){
         } catch (error) {
             alert(error)
         }
-    })
+    }, [])
 
     return (
         (!!pokemon) && <div
             key={pokemon.id}
-            className="border rounded-md text-center flex flex-col h-full
+            className="border rounded-md text-center flex flex-col h-full bg-[aliceblue]
                        hover:border-2 hover:shadow-md hover:border-black transition-all duration-200"
         >
+            <TypingDiv typingNames={pokemon.typing}/>
+
             <img 
                 src={`${pokemon.spritePath}`} 
                 alt={`${pokemon.name}`}

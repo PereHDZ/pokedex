@@ -3,8 +3,8 @@ import path from 'path'
 
 import { PokemonType } from '../../models'
 
-const SMALL_ICON_DIR = path.join('pokedex', 'app', 'public', 'Small_Icons')
-const FULL_ICON_DIR = path.join('pokedex', 'app', 'public', 'Full_Icons')
+const SMALL_ICON_DIR ='Small_Icons'
+const FULL_ICON_DIR = 'Full_Icons'
 
 const allTypes = [
     { name: 'Rock' },

@@ -16,6 +16,11 @@ const pokemon = new Schema ({
     spritePath: {
         type: String,
         required: true
+    },
+
+    typing: {
+        type: [String],
+        required: true
     }
 })
 

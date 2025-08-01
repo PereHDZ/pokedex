@@ -42,6 +42,19 @@ mongoose.connect(MONGODB_URL)
                 res.status(500).json({ error: error.message })
             }
         })
+
+
+        api.get('/pokemonType/:name', async (req, res) => {
+            const { name } = req.params
+
+            try {
+                const pokemonType = await logic.retrievePokemonTypeByName(name)
+                res.json(pokemonType)
+            } catch (error: any) {
+                console.error('Error ocurred: ', error.message)
+                res.status(500).json({ error: error.message })
+            }
+        })
         
 
         api.listen(PORT, () => {

@@ -21,8 +21,6 @@ function App() {
     fetchAllBaseIds()
   }, [])
 
-  console.log(allPokemonIds)
-
   return (
     <>
       {!!allPokemonIds.length && <NationalGrid allBaseIds={allPokemonIds} />}

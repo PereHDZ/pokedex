@@ -16,7 +16,7 @@ const pokemonType = new Schema({
     fullIconPath: {
         type: String,
         required: true
-    },
+    }
 })
 
 export default pokemonType
