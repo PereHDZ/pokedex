@@ -5,9 +5,8 @@ import path from 'path'
 import { Pokemon } from '../../models'
 
 const allNames = pokemon.all()
-const nameDocs = allNames.map(name => ({ name }))
 
-const SPRITE_DIR = 'pokedex/app/public/sprites/national'
+const SPRITE_DIR = 'sprites/national'
 
 const allPokemon = allNames.map((name, index) => {
     const id = (index + 1).toString().padStart(4, '0')

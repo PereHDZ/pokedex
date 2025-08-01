@@ -3,7 +3,8 @@ import GenGrid from "./GenGrid"
 
 function NationalGrid({ allBaseIds }){
     const gens = [
-        newGen('I', 1, 151, '#d87d7d')
+        newGen('I', 1, 151, '#d87d7d'),
+        newGen('II', 152, 251, '#f2d367')
     ]
 
     function newGen (name, start, end, color){
@@ -11,7 +12,7 @@ function NationalGrid({ allBaseIds }){
     }
 
     return (
-        <div className = "flex items-stretch">
+        <div className = "flex items-stretch flex-col">
             {gens.map(gen => {
                 return (<GenGrid
                     gen={gen}

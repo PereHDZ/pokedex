@@ -31,6 +31,19 @@ mongoose.connect(MONGODB_URL)
             }
         })
 
+        api.get('/pokemon/:id', async (req, res) => {
+            const { id } = req.params
+
+            try {
+                const pokemon = await logic.retrievePokemonById(id)
+                res.json(pokemon)
+            } catch (error: any) {
+                console.error('Error ocurred: ', error.message)
+                res.status(500).json({ error: error.message })
+            }
+        })
+        
+
         api.listen(PORT, () => {
             console.log(`API listening on port ${PORT}`)
         })

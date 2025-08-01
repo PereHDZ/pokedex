@@ -1,7 +1,9 @@
 import retrieveAllBaseIds from './retrieveAllBaseIds'
+import retrievePokemonById from './retrievePokemonById'
 
 const logic = {
-    retrieveAllBaseIds
+    retrieveAllBaseIds,
+    retrievePokemonById
 }
 
 export default logic
