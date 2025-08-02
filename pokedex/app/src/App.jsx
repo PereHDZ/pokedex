@@ -1,30 +1,38 @@
 import React, { useEffect, useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
 
 import logic from './logic'
-
 import './App.css'
-import NationalGrid from './components/NationalGrid'
+
+import Home from './routes/Home'
+import PokemonDetails from './routes/PokemonDetails'
 
 function App() {
   const [allPokemonIds, setAllPokemonIds] = useState([])
 
-  const fetchAllBaseIds = async () => {
-    try {
-      const ids = await logic.retrieveAllBaseIds()
-      setAllPokemonIds(ids)
-    } catch (error) {
-      alert(error)
-    }
-  }
-
   useEffect(() => {
+    const fetchAllBaseIds = async () => {
+      try {
+        const ids = await logic.retrieveAllBaseIds()
+        setAllPokemonIds(ids)
+      } catch (error) {
+        alert(error)
+      }
+    }
+
     fetchAllBaseIds()
   }, [])
 
   return (
-    <>
-      {!!allPokemonIds.length && <NationalGrid allBaseIds={allPokemonIds} />}
-    </>
+    <Routes>
+      <Route
+        path="/"
+        element={
+          !!allPokemonIds.length && <Home allBaseIds={allPokemonIds} />
+        }
+      />
+      <Route path="/pokemon/:id" element={<PokemonDetails />} />
+    </Routes>
   )
 }
 

@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 import logic from '../logic'
 import TypingDiv from './TypingDiv'
 
 function PokemonCard({ id, color }){
     const [pokemon, setPokemon] = useState(null)
+    const navigate = useNavigate()
 
     useEffect(() => {
         try {
@@ -15,10 +18,11 @@ function PokemonCard({ id, color }){
     }, [])
 
     return (
-        (!!pokemon) && <div
+        (!!pokemon) && <button
             key={pokemon.id}
-            className="border rounded-md text-center flex flex-col h-full bg-[aliceblue]
+            className="border rounded-md text-center flex flex-col h-full bg-[aliceblue] p-0
                        hover:border-2 hover:shadow-md hover:border-black transition-all duration-200"
+            onClick={() => navigate(`/pokemon/${pokemon.id}`)}
         >
             <TypingDiv typingNames={pokemon.typing}/>
 
@@ -34,7 +38,7 @@ function PokemonCard({ id, color }){
             >
                 #{pokemon.id} {pokemon.name}
             </div>            
-        </div>
+        </button>
     )
 }
 
