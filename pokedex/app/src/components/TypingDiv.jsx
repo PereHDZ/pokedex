@@ -11,20 +11,17 @@ function TypingDiv({ typingNames }) {
       for (const typeName of typingNames) {
         try {
           const data = await logic.retrievePokemonTypeByName(typeName);
-          console.log('Data received:', data);
           newTyping.push(data);
         } catch (err) {
           console.error('Error fetching type:', err);
         }
       }
 
-      console.log('Final newTyping:', newTyping); 
       setTyping(newTyping);
     };
 
     fetchTypes(); 
-  }, [typingNames]); 
-  console.log(`Typing: ${typing}`);
+  }, []); 
 
   return (
     (!!typing.length) && <div className='flex justify-end'>

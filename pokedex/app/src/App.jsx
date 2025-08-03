@@ -25,12 +25,7 @@ function App() {
 
   return (
     <Routes>
-      <Route
-        path="/"
-        element={
-          !!allPokemonIds.length && <Home allBaseIds={allPokemonIds} />
-        }
-      />
+      <Route path="/" element={ !!allPokemonIds.length && <Home allBaseIds={allPokemonIds} /> } />
       <Route path="/pokemon/:id" element={<PokemonDetails />} />
     </Routes>
   )
