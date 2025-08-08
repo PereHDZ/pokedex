@@ -52,12 +52,16 @@ function PokemonCardDetails({ pokemon }) {
 
   return (
     <div 
-        className={`flex flex-col items-center justify-center h-64 border-4 p-2 rounded-md`}
+        className={`flex flex-col items-center justify-center border-4 p-2 rounded-md`}
         style={{ 
             backgroundColor: matchingColor ? matchingColor.baseColor : undefined,
             borderColor: matchingColor ? matchingColor.accentColor : undefined 
         }}
     >
+      <div className="flex ustify-between w-full pb-2">
+        <h2 className="flex-1 border mt-2 bg-white rounded-md mr-2">#{pokemon.id}</h2>
+        <h2 className="flex-1 border mt-2 bg-white rounded-md">{pokemon.name}</h2>
+      </div>
 
       <img
         src={`../${pokemon.spritePath}`}
@@ -65,20 +69,22 @@ function PokemonCardDetails({ pokemon }) {
         className="border bg-white rounded-md w-200" 
       />
 
-      <div className="flex ustify-between w-full pb-2">
-        <h2 className="flex-1 border mt-2 bg-white rounded-md mr-2">#{pokemon.id}</h2>
-        <h2 className="flex-1 border mt-2 bg-white rounded-md">{pokemon.name}</h2>
-      </div>
+      <div 
+        className='flex flex-col p-1 pt-0 mt-2 rounded-md ' 
+        style={{backgroundColor: matchingColor ? matchingColor.accentColor : undefined}}
+      >
+        <span className='text-white'>Type</span>
 
-      <div className='flex bg-white p-1 rounded-md'>
-        {pokemonTypes.map((pokemonType) => (
-          <img
-            key={pokemonType.name}
-            src={`../${pokemonType.fullIconPath}`}
-            alt={pokemonType.name}
-            className='w-20'
-          />
-        ))}
+        <div className='flex bg-white p-1 rounded-md'>
+          {pokemonTypes.map((pokemonType) => (
+            <img
+              key={pokemonType.name}
+              src={`../${pokemonType.fullIconPath}`}
+              alt={pokemonType.name}
+              className='w-20'
+            />
+          ))}
+        </div>
       </div>
     </div>
   )
