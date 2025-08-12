@@ -21,6 +21,11 @@ const pokemon = new Schema ({
     typing: {
         type: [String],
         required: true
+    },
+
+    abilities: {
+        type: [String],
+        required: true
     }
 })
 
