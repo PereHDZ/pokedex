@@ -1,0 +1,11 @@
+"use strict";
+exports.__esModule = true;
+exports.PokemonAbility = exports.Ability = exports.PokemonType = exports.Pokemon = void 0;
+var Pokemon_1 = require("./Pokemon");
+exports.Pokemon = Pokemon_1["default"];
+var PokemonType_1 = require("./PokemonType");
+exports.PokemonType = PokemonType_1["default"];
+var Ability_1 = require("./Ability");
+exports.Ability = Ability_1["default"];
+var PokemonAbility_1 = require("./PokemonAbility");
+exports.PokemonAbility = PokemonAbility_1["default"];

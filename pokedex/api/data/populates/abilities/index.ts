@@ -4,6 +4,7 @@ import { abilities51_75 } from './001-100/abilities51_75'
 import { abilities76_100 } from './001-100/abilities76_100'
 import { abilities101_125 } from './101-200/abilities101-125'
 import { abilities126_150 } from './101-200/abilities126_150'
+import { abilities151_175 } from './101-200/abilities151_175'
 
 export default [
     ...abilities1_25,
@@ -11,5 +12,6 @@ export default [
     ...abilities51_75,
     ...abilities76_100,
     ...abilities101_125,
-    ...abilities126_150
+    ...abilities126_150,
+    ...abilities151_175
 ]

@@ -64,7 +64,7 @@ export const abilities126_150 = [
     {
         id: 138,
         name: 'Flare Boost',
-        description: `TPowers up physical moves when the Pokémon is burned by 50%.`
+        description: `Powers up physical moves when the Pokémon is burned by 50%.`
     },
     {
         id: 139,
