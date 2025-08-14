@@ -109,7 +109,7 @@ export const abilities151_175 = [
     {
         id: 172,
         name: 'Competitive',
-        description: "Boosts the Pokémon's Sp. Atk stat sharply when its stats are lowered by an opposing Pokémon.."
+        description: "Boosts the Pokémon's Sp. Atk stat sharply when its stats are lowered by an opposing Pokémon."
     },
     {
         id: 173,
